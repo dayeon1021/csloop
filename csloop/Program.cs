@@ -10,6 +10,14 @@ namespace csloop
     {
         static void Main(string[] args)
         {
+            long start = DateTime.Now.Ticks; //내부적으로 흐른 시간
+            long count = 0;
+            while (start + (10000000) > DateTime.Now.Ticks)
+            {
+                count++;
+            }
+
+            Console.WriteLine(count);
         }
     }
 }
