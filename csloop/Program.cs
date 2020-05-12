@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Threading;
 namespace csloop
 {
     class Program
@@ -66,13 +66,30 @@ namespace csloop
             }
             */
             //예제 5
+            /*
             int i = 0;
             while (i < 10)
             {
                 Console.WriteLine("출력");
                 i++;
             }
+            */
+            int x = 1;
+            while (x < 50)
+            {
+                Console.Clear();
+                Console.SetCursorPosition(x, 5);
 
+                if (x % 3 == 0)
+                    Console.WriteLine("__@");
+                else if (x % 3 == 1)
+                    Console.WriteLine("_^@");
+                else
+                    Console.WriteLine("^_@");
+
+                Thread.Sleep(100);
+                x++;
+            }
 
 
 
